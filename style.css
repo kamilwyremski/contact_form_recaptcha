@@ -1,0 +1,27 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+form{
+    width:320px;
+    margin:20px auto;
+    border:2px solid #ccc;
+	padding:20px;
+}
+form label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+    font-size:12px;
+    color:#555555;
+}
+form textarea,form input {
+	padding:5px; 
+	border:1px solid #ccc; 
+	margin-bottom:25px; 
+	width:100%;
+	box-sizing: border-box;
+}
+form input[type=submit] {
+	cursor:pointer;
+	margin-bottom:0px;
+}
