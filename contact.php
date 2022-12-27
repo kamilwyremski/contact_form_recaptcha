@@ -19,7 +19,6 @@ if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['message
 
     if($response['success'] == false){
 		die('Kod captcha jest nieprawidłowy');
-		$input = $_POST;
 	}else{
 		$email_odbiorcy = 'example@example.com';
 		
@@ -55,7 +54,7 @@ if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['message
 <body>
 
 <form method="post">
-	<input type="hidden" name="recaptcha_response" class="recaptchaResponse">
+	<input type="hidden" name="recaptcha_response" class="recaptcha_response">
     <label for="name">Imię i nazwisko</label>
     <input type="text" name="name" id="name" placeholder="Jan Kowalski" required>
 
@@ -71,8 +70,8 @@ if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['message
 <script>
 	grecaptcha.ready(function () {
 		grecaptcha.execute('<SITE_KEY>', { action: 'contact' }).then(function (token) {
-			var elms = document.getElementsByClassName('recaptchaResponse')
-			for (var i = 0; i < elms.length; i++) {
+			const elms = document.getElementsByClassName('recaptcha_response');
+			for (let i = 0; i < elms.length; i++) {
 				elms[i].setAttribute("value", token);
 			}
 		});
